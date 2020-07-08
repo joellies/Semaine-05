@@ -6,6 +6,8 @@ body {
   margin-bottom: 0;
 }
 
+/*Header*/
+
 header {
   display: flex;
   flex: row wrap;
@@ -22,14 +24,9 @@ nav a {
   padding: 20px;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: row;
-}
+/*Titres*/
 
 h1 {
-  margin-top: 100px;
-  margin-left: 100px;
   color: #f5f5f5;
   font-family: Montserrat, sans serif;
   font-size: 48;
@@ -37,16 +34,31 @@ h1 {
 }
 
 h2 {
-  margin-top: 50px;
-  margin-bottom: 75px;
-  margin-left: 100px;
   color: #f5f5f5;
   font-family: Montserrat, sans serif;
   font-size: 35;
   font-weight: 200;
 }
 
-#menu-main-container {
+/*Main-container landing page*/
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#title-landing-page {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+#subtitle-landing-page {
+  margin-top: 50px;
+  margin-bottom: 75px;
+  margin-left: 100px;
+}
+
+#call-to-action-landing-page {
   display: flex;
   width: 200px;
   margin-left: 100px;
@@ -113,10 +125,11 @@ a:hover::before {
   z-index: -2;
 }
 
-.characters-right-page {
+#characters-landing-page {
   display: flex;
   flex: row;
   justify-content: flex-end;
+  bottom: 0px;
 }
 /*Formulaire*/
 

@@ -51,14 +51,12 @@ div.foals {
 
 #icons {
   display: flex;
-  flex-flow : row wrap;
-  align-content: center;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
 }
 
 #icons div {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {

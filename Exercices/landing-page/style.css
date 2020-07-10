@@ -3,6 +3,7 @@
 body {
   background-color: #1C1730;
   margin: 0;
+  height: 100%;
   margin-bottom: 0;
 }
 
@@ -43,22 +44,30 @@ h2 {
 
 /*Main-container landing page*/
 
+.main-container-landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90%;
+}
+
 .left-side-landing-page {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
+
 #title-landing-page {
   margin-left: 40px;
   margin-top: 100px;
-  padding: 5px;
+  margin-bottom: 20px;
 }
 
 #subtitle-landing-page {
   margin-left: 40px;
-  margin-top:20px
-  padding: 5px;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
 /*CTA*/
@@ -101,7 +110,8 @@ a:hover::before {
 #wave-footer {
   width: 100%;
   height: 130px;
-  bottom: 0px;
+  position : absolute
+  bottom: 0;
   z-index: 0;
 }
 /*Menu*/
@@ -111,25 +121,21 @@ a:hover::before {
   margin: 10px;
 }
 
-#characters-landing-page {
-  display: grid;
-  grid-template-columns: 1fr 0.4fr 0.5fr;
-  grid-template-rows: 0.1fr 0.5fr;
-}
-
 #man-listening-music {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  width: 230px;
-  height: 230px;
+  position: absolute;
+  top:75%;
+  left:55%;
+  width: 270px;
+  height: 270px;
   z-index: -1;
 }
 
 #woman-listening-music {
-  grid-column: 3 /4;
-  grid-row: 2/3;
-  width: 260px;
-  height: 260px;
+  position: relative;
+  top:66%;
+  right: 20%;
+  width: 270px;
+  height: 270px;
   z-index: -2;
 }
 
@@ -227,13 +233,14 @@ a:hover::before {
 
   /*Footer discover*/
 
-.footer-discover-comment {
+.footer-general {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   height: 100px;
   background-image: url("images/wave-vector-footer.svg");
+  z-index: 0
 }
 
 .about-contact {
@@ -281,37 +288,111 @@ div .twitch {
 
 /*Comment page*/
 
-span#wave {
-  font-size: 70;
-}
-
-/* Image comment page*/
-
 .main-container-comment {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+/*Left side join the wave*/
+
 .left-side-comment {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin-top: 20px;
+  margin-left:20px;
 }
+
+.title-comment {
+  width: 50%;
+  margin: 70px;
+}
+
+span#wave {
+  font-size: 70;
+}
+
+/*Image comment left side*/
+
+#woman-music-comments {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  left:40;
+  bottom:-55;
+  z-index: -1;
+}
+
+/*Form right side*/
 
 .right-side-comment {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin-top: 120px;
 }
 
-.comment-form {
+div .comment-form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
+  height: 100%;
 }
 
-#woman-music-comments {
-  width: 300px;
-  height: 300px;
+.name-box {
+ width: 50%;
+}
+
+label {
+  color: #f5f5f5;
+  font-family: Montserrat, sans serif;
+  font-size: 18;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.name-box, .comment-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+textarea#comment {
+  height:150px;
+  border: 1px solid #E1F701;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+input#auteur {
+  height: 30px;
+  border: 1px solid #E1F701;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+button#submit-btn {
+  width : 25%;
+  background-color:#f5f5f5;
+  border-radius: 5px;
+  margin-top: 30px;
+  height: 50px;
+  font-family: Montserrat, sans cursif;
+  font-size: 18;
+  font-weight: bold;
+  color: #1C1730;
+  transition: 2s;
+}
+
+button#submit-btn:hover {
+background-color: #E1F701;
+color : #1C1730;
+font-weight: bold;
+}
+
+input, textarea {
+  color:#f5f5f5;
+  font-family: Montserrat, sans cursif;
+  font-size: 18;
 }

@@ -9,14 +9,14 @@
     />
     <title>Soundwave : feel the music</title>
   </head>
-  <body>
+  <img>
     <header>
        <div class="logo">
          <img src="images/logo-soundwave.svg" alt="logo Soundwave"></img>
        </div>
          <nav>
           <a href="#discover">Discover</a>
-          <a href="http://127.0.0.1:52573/Exercices/landing-page/comments.html">Comment</a>
+          <a href="#comments">Comment</a>
         </nav>
     </header>
     <div class="main-container-comment">
@@ -25,22 +25,27 @@
           <h1>Join the <span id="wave">wave.</span>
           </h1>
         </div>
-        <img id="woman-music-comments" src="images/woman-music-comment.svg" alt="woman listening music"></img>
+        <img id ="woman-music-comments" src="images/woman-music-comment.svg" alt="woman listening music"></img>
       </div>
       <div class="right-side-comment">
         <div class="comment-form">
           <form id="my-form">
-            <label for="auteur">Name</label>
+              <div class="name-box">
+              <label for="auteur">Name</label>
             <input name="auteur" id="auteur">
-            <label for="comment">Comment</label>
-            <textarea name="comment" id="comment"></textarea>
+            </div>
+            <div class="comment-box">
+              <label for="comment">Comment</label>
+              <textarea name="comment" id="comment"></textarea>
+            </div>
           </form>
-          <button id="submit-btn">Envoyer</button>
+          <button id="submit-btn">Submit</button>
         </div>
-      <div id="balise"></div>
+          <div id="balise">
+        </div>
+      </div>
     </div>
-    </div>
-    <footer class="footer-discover-comment">
+    <footer class="footer-general">
       <div class="about-contact">
         <a href="#about-us">About us</a>
         <a href="#contact">Contact</a>

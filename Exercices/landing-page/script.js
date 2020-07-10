@@ -1,4 +1,4 @@
-/*document.getElementById('submit-btn').addEventListener('click', () => {
+document.getElementById('submit-btn').addEventListener('click', () => {
   let authorValue = document.getElementById('auteur').value;
   let commentValue = document.getElementById('comment').value;
   let body = {
@@ -37,4 +37,4 @@ let getComment = () => {
       });
     });
 };
-getComment();*/
+getComment();

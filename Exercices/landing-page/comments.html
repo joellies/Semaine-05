@@ -4,37 +4,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" media="all" rel="stylesheet" type="text/css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto:wght@100;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Sans+Caption&family=Roboto:wght@100;700&display=swap"
       rel="stylesheet"
     />
     <title>Soundwave : feel the music</title>
   </head>
   <body>
-    <div class="grid-container">
-      <div class="header">
-        <div id="logo">
-          <img src="images/plus.png" alt="logo Soundwave"></img>
-        </div>
-        <nav>
-        <a href="#discover">Discover</a>
-        <a href="#comment">Comment</a>
+    <header>
+       <div class="logo">
+         <img src="images/logo-soundwave.svg" alt="logo Soundwave"></img>
+       </div>
+         <nav>
+          <a href="#discover">Discover</a>
+          <a href="http://127.0.0.1:52573/Exercices/landing-page/comments.html">Comment</a>
         </nav>
+    </header>
+    <div class="main-container-comment">
+      <div class="left-side-comment">
+        <div class="title-comment">
+          <h1>Join the <span id="wave">wave.</span>
+          </h1>
+        </div>
+        <img id="woman-music-comments" src="images/woman-music-comment.svg" alt="woman listening music"></img>
       </div>
-      <div class="main-content">
-        <div id="comment-form">
+      <div class="right-side-comment">
+        <div class="comment-form">
           <form id="my-form">
-            <label for="auteur">Auteur</label>
+            <label for="auteur">Name</label>
             <input name="auteur" id="auteur">
             <label for="comment">Comment</label>
             <textarea name="comment" id="comment"></textarea>
           </form>
           <button id="submit-btn">Envoyer</button>
         </div>
-        <div id="balise"></div>
-      </div>
-      <div class="footer"></div>
+      <div id="balise"></div>
     </div>
-
+    </div>
+    <footer class="footer-discover-comment">
+      <div class="about-contact">
+        <a href="#about-us">About us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-networks">
+        <div class="instagram">
+          <img id="insta-icon" src="images/instagram.png" alt="icône instagram"></img>
+          <a href="www.instagram.com">Instagram</a>
+        </div>
+        <div class="twitch">
+          <img id="twitch-icon" src="images/twitch.png" alt="icône twitch">
+          <a href="www.twitch.com">Twitch</a>
+        </div>
+      </div>
+    </footer>
   </body>
   <script src="script.js"></script>
 </html>

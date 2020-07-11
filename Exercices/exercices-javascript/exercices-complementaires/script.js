@@ -43,17 +43,27 @@ document.getElementById('submit-btn').addEventListener('click', () => {
 
 //10. Maintenant, créez une méthode fetch qui va aller récupérer toutes les données de l'API, comme la semaine dernière. Elle va vous retourner un tableau d'objets. Pour chaque élément de ce tableau, créez dynamiquement une div pour afficher le commentaire dans votre index.html */
 
-fetch('https://quotes-light-api.herokuapp.com/api/comments/', {
-  method: 'GET',
-});
-.then (response => {
-  return response.json()
-})
-.then (response => {
-  let data = response;
-  data.forEach(element => {
-
-
-
+let getComment = () => {
+  fetch('https://quotes-light-api.herokuapp.com/api/comments/', {
+    method: 'GET',
   })
-})
+    .then(response => {
+      return response.json();
+    })
+    .then(response => {
+      let data = response;
+      data.forEach(element => {
+        let currentDiv = document.getElementById('balise');
+        let newDivAuteur = document.createElement('div');
+        let newDivComment = document.createElement('div');
+        let newContentAuteur = document.createTextNode(element.auteur);
+        let newContentComment = document.createTextNode(element.comment);
+        newDivAuteur.appendChild(newContentAuteur);
+        newDivComment.appendChild(newContentComment);
+        currentDiv.insertBefore(newDivAuteur, currentDiv.nextElementSibling);
+        currentDiv.insertBefore(newDivComment, currentDiv.nextElementSibling);
+      });
+    });
+};
+
+getComment();

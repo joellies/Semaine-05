@@ -81,7 +81,7 @@ Pour ce faire, il faut se référer à la documentation de votre API, ou directe
 Je vous indiquerai donc ce que le serveur attend dans les consignes de votre exercice.
 
 Le corps de la requête est le plus souvent attendu sous format JSON.
-Pour cette semaine nous allons générer un corps à l'aide de l'objet FormData et de la méthode JSON.stringify()
+Pour cette semaine nous allons générer un corps en créant un objet sur base de la récupération de la valeur des input de votre formulaire et de la méthode JSON.stringify()
 
 ## 2. Construire une requête "POST" à l'aide de la méthode fetch()
 
@@ -89,7 +89,7 @@ D'abord nous définissons les headers nécessaires à notre requête.
 
 Ensuite nous avons besoin de récupérer les valeurs des inputs du formulaire rempli par l'utilisateur:
 
-Pour ce faire nous avons besoin de l'objet FormData:
+Pour ce faire nous avons besoin d'un objet body:
 
 Il va directement récupérer les valeurs introduites pour un formulaire donné (récupéré à l'aide de son ID).
 Ces données seront ensuite utilisées pour créer le corps de votre requête, mais elles doivent d'abord être transformée sous format JSON, nous aurons donc besoin de la méthode "JSON.stringify()".
@@ -98,20 +98,25 @@ Ces données seront ensuite utilisées pour créer le corps de votre requête, m
 let myHeaders = new Headers({"Content-Type": "application/json"})
 let form = document.getElementById("my-form");
 document.getElementById("submit-btn").addEventListener("click", () => {
-  let formData = new FormData(form);
+  let formAuteur= document.getElementById("auteur").value;
+  let formComment = document.getElementById("comment").value;
+  let body = {
+    "auteur": formAuteur,
+    "comment":formComment
+  };
   fetch("l'url-de-mon-api", {
     method: "POST",
       headers: myHeaders,
-      body: JSON.stringify(formData)
+      body: JSON.stringify(body)
   })
 })
 ```
 
 **Observons ce bout de code:**
 
-1. On défini une variable récupérant le formulaire via document.getElementById("my-form"), cette variable pointe directement vers l'élément HTML "Form" dont l'id est my-form.
+1. Ensuite, au click sur un bouton dont l'id vaut "submit-btn" (c'est à dire le bouton destiné à envoyer le formulaire vers le serveur). On défini deux nouvelles variables formAuteur et formComment qui vont récupérer les valeurs des input auteur et comment;
 
-2. Ensuite, au click sur un bouton dont l'id vaut "submit-btn" (c'est à dire le bouton destiné à envoyer le formulaire vers le serveur) on crée un nouvel objet "FormData" qui va récupérer les pairs de clés/valeurs pointées par la variable "form".
+2. On crée un nouvel objet "body" qui va récupérer les pairs de clés/valeurs pointées par les variables formAuteur et formComment
 
 3. Ensuite on crée une méthode fetch qui prend comme argument l'url de mon api, et comme second argument un objet dont les clés sont "method", "headers", "body".
 
@@ -119,7 +124,7 @@ document.getElementById("submit-btn").addEventListener("click", () => {
 
 5. Ensuite, la clé headers reçoit comme valeur ma variable créée plus haut nommée myHeaders
 
-6. Pour finir la clé body est attribuée à une méthode, JSON.stringify qui reçoit en argument la variable formData, elle va transformer les paires de clés/valeurs de votre formulaire en format JSON, qui est le format attendu par le serveur.
+6. Pour finir la clé body est attribuée à une méthode, JSON.stringify qui reçoit en argument la variable body, elle va transformer les paires de clés/valeurs de votre formulaire en format JSON, qui est le format attendu par le serveur.
 
 ## 3. Manipuler le DOM: créer de nouveaux éléments HTML de façon dynamique et y ajouter le contenu d'une réponse HTTP
 
@@ -144,7 +149,7 @@ fetch("l-url-de-mon-api", {method: "GET"})
     let newContent = document.createTextNode(element.auteur)
     newDiv.appendChild(newContent);
     let currentDiv = document.getElementById("insert");
-    document.body.insertBefore(newDiv, currentDiv)
+    document.body.insertBefore(newDiv, currentDiv.nextElementSibling)
   })
 })
 ```
